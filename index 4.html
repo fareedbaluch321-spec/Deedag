@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deedag - Book Sharing Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>📚 Deedag - Book Sharing Platform</h1>
+        <p>Share Books, Rent Books, Read Together!</p>
+    </header>
+
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#share">Share Book</a>
+        <a href="#rent">Rent Book</a>
+        <a href="#mybooks">My Books</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="search" class="search-section">
+            <h2>تلاش کریں</h2>
+            <input type="text" id="searchInput" placeholder="کتاب کا نام یا مصنف تلاش کریں...">
+            <button onclick="searchBooks()">Search</button>
+        </section>
+
+        <section id="home" class="books-section">
+            <h2>دستیاب کتابیں</h2>
+            <div id="booksList" class="books-container">
+                <div class="book-card">
+                    <h3>علامہ اقبال کی شاعری</h3>
+                    <p><strong>مصنف:</strong> علامہ اقبال</p>
+                    <p><strong>زمرہ:</strong> شاعری</p>
+                    <p><strong>حالت:</strong> شیئر کے لیے دستی��ب</p>
+                    <button class="button" onclick="addToShare(this)">شیئر لسٹ میں شامل کریں</button>
+                    <button class="button" onclick="rentBook(this)">کرائے پر لیں</button>
+                </div>
+
+                <div class="book-card">
+                    <h3>علی الوار</h3>
+                    <p><strong>مصنف:</strong> ہارون الرشید</p>
+                    <p><strong>زمرہ:</strong> تاریخ</p>
+                    <p><strong>حالت:</strong> کرائے کے لیے دستیاب</p>
+                    <button class="button" onclick="addToShare(this)">شیئر لسٹ میں شامل کریں</button>
+                    <button class="button" onclick="rentBook(this)">کرائے پر لیں</button>
+                </div>
+
+                <div class="book-card">
+                    <h3>اردو ادب کا سفر</h3>
+                    <p><strong>مصنف:</strong> احمد علی</p>
+                    <p><strong>زمرہ:</strong> ادب</p>
+                    <p><strong>حالت:</strong> دونوں دستیاب ہیں</p>
+                    <button class="button" onclick="addToShare(this)">شیئر لسٹ میں شامل کریں</button>
+                    <button class="button" onclick="rentBook(this)">کرائے پر لیں</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="rent" class="rental-section">
+            <h2>کرائے پر کتاب لیں</h2>
+            <form onsubmit="submitRental(event)">
+                <input type="text" placeholder="کتاب کا نام درج کریں" required>
+                <input type="email" placeholder="ای میل" required>
+                <input type="number" placeholder="کتنے دن کے لیے" required>
+                <button type="submit" class="button">درخواست بھیجیں</button>
+            </form>
+        </section>
+
+        <section id="share" class="share-section">
+            <h2>اپنی کتاب شیئر کریں</h2>
+            <form onsubmit="submitShare(event)">
+                <input type="text" placeholder="کتاب کا نام" required>
+                <input type="text" placeholder="مصنف" required>
+                <input type="text" placeholder="زمرہ" required>
+                <textarea placeholder="تفصیل" rows="4"></textarea>
+                <button type="submit" class="button">شیئر کریں</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Deedag - Book Sharing Platform | تمام حقوق محفوظ ہیں</p>
+        <ul>
+            <li><a href="#">رازداری پالیسی</a></li>
+            <li><a href="#">شرائط و شروط</a></li>
+            <li><a href="#">رابطہ کریں</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
